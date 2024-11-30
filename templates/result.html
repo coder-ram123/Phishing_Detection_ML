@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}" />>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* light gray */
+    animation: fadeIn 1s ease;
+}
+h1 {
+    color: #343a40; /* dark gray */
+    text-align: center;
+    margin-top: 50px;
+    animation: slideInFromTop 1s ease;
+}
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff; /* blue */
+    animation: slideInFromBottom 1s ease;
+}
+a:hover {
+    text-decoration: underline;
+}
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>    
+</head>
+<body>
+    <h1>{{ result }}</h1>
+    <a href="/">Back to Dashboard</a>
+</body>
+</html>

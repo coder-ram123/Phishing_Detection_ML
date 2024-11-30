@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}" />>
+    <style>
+    body{
+        background-color: #d3d3ff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .main .content{
+        margin-top: -100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 200px;
+    }
+    
+    .predict {
+        font-size: 40px;
+        color: blue;
+    }
+    
+    .data {
+        margin-top: 20px;
+    }
+    .data form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .data label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .data input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+     button {
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    
+     button:hover {
+        background-color: #e74c3c;
+    }
+    
+    .main img {
+        width: 50%;
+        height: 80%;
+        margin-top: 30px;
+    }
+    .logout-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+</style>    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <h1 class="predict" data-aos="fade-right" data-aos-duration="3000">Phishing Detection</h1>
+            <div class="data">
+                <form action="/predict" name="dashboard" method="POST" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="200">
+                    <label for="url">Enter URL:</label>
+                    <input type="text" id="url" name="url" required>
+                    <button type="submit" id="bnt">Predict</button>
+                </form>
+            </div>
+        </div>
+      
+        <button onclick="logout()" class="logout-btn">Logout</button>
+
+        <img src="https://www.globalts.com/images/easyblog_shared/February_2024/2-26-24/DataTheft_419386944_400.jpg">
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            offset: 1
+        });
+
+        function logout() {
+            // window.location.href ='../public/views/signInsignup.html'
+            window.location.href = '../public/views/SignInSignUp.html' ;
+            
+        }
+    </script>
+</body>
+</html>
